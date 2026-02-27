@@ -1,8 +1,8 @@
 public class TV
 {
-    int channel = 1;
-    int volumeLevel = 1;
-    boolean on = false;
+    int channel ;
+    int volumeLevel ;
+    boolean on;
 
     public TV()
     {
