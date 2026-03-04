@@ -4,27 +4,33 @@ import java.util.ArrayList;
 
 public class GameEnvironment
 {
+    //encapsulation
     private double width, height;
     private ArrayList<GamePlayer> arrPlayer = new ArrayList<>();
     private ArrayList<GameEnemy> arrEnemy = new ArrayList<>();
 
+    //constructor kosong
     public GameEnvironment(){
 
     }
 
+    //constructor dengan parameter width dan height
     public GameEnvironment(double width, double height){
         this.width = width;
         this.height = height;
     }
 
+    //method untuk menmbah player ke dalam environment
     public void addPlayer(GamePlayer player){
         this.arrPlayer.add(player);
     }
 
+    //method untuk menghapus player dari environment
     public void removePlayer(GamePlayer player){
         this.arrPlayer.remove(player);
     }
 
+    //method untuk menampilkan semua player di environment
     public void getAllPlayer(){
         if (arrPlayer.isEmpty()){
             System.out.println("No player in the environment");
@@ -34,23 +40,28 @@ public class GameEnvironment
         }
     }
 
+    //method untuk menambah enemy ke environment
     public void addEnemy(GameEnemy enemy){
         this.arrEnemy.add(enemy);
     }
 
+    //method untuk menghapus enemy dari environment
     public void removeEnemy(GameEnemy enemy){
         this.arrEnemy.remove(enemy);
     }
 
+    //method untuk menampilkan semua enemy di environment
     public ArrayList<GameEnemy> getAllEnemy(){
         return this.arrEnemy;
     }
 
+    //method untuk menghitung jarak antara player dan enemy
     public static int EuclideanDistance(int x1, int y1, int x2, int y2){
         return (int) Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
 
     }
 
+    //method untuk melakukan interaksi antara player dan enemy
     public void Iteraction(){
         if (arrPlayer == null || arrEnemy == null){
             System.out.println("Player or enemy not sets");
